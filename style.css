@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    color: #f0f0f0;
 }
 
 nav {
@@ -10,7 +11,6 @@ nav {
     padding: 20px;
     display: flex;
     opacity: 0.8;
-    align-items: center;
     justify-content: right;
     
   }
@@ -27,28 +27,38 @@ nav {
   
   nav a {
     text-decoration: none;
-    color: white;
     font-weight: bold;
   }
 
   button {
     padding: 7px 15px;
     background-color: #265097;
-    color: white;
     border: none;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #45a049;
-  }
-
-  input {
-    width: 200px;
-    padding: 5px;
+    background-color: #346bca;
   }
 
 body {
     background-image: url('gateshead-hero.jpg');
     background-size: cover;
+}
+
+#searchInput {
+    color: black;
+    background-color: #f0f0f0;
+    width: 300px;
+    padding: 15px;
+    border-style: none;
+}
+
+#navButtons {
+    float: left;
+}
+
+#searchForm {
+    float: right;
+    background-color: #f0f0f0;
 }
