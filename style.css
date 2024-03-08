@@ -5,11 +5,11 @@
 }
 
 nav {
-    background-color: #f0f0f0;
+    background-color: #0a3e9b ;
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: right;
     
   }
   
@@ -25,13 +25,13 @@ nav {
   
   nav a {
     text-decoration: none;
-    color: #333;
+    color: #f0f0f0;
     font-weight: bold;
   }
 
   button {
     padding: 7px 15px;
-    background-color: #4CAF50;
+    background-color: #356fd3;
     color: white;
     border: none;
     cursor: pointer;
