@@ -2,12 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 nav {
-    background-color: #0a3e9b ;
+    background-color: #083075 ;
     padding: 20px;
     display: flex;
+    opacity: 0.8;
     align-items: center;
     justify-content: right;
     
@@ -25,13 +27,13 @@ nav {
   
   nav a {
     text-decoration: none;
-    color: #f0f0f0;
+    color: white;
     font-weight: bold;
   }
 
   button {
     padding: 7px 15px;
-    background-color: #356fd3;
+    background-color: #265097;
     color: white;
     border: none;
     cursor: pointer;
