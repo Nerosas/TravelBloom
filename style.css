@@ -12,6 +12,7 @@ nav {
     display: flex;
     opacity: 0.8;
     justify-content: right;
+    font-size: 25px;
     
   }
   
@@ -32,13 +33,15 @@ nav {
 
   button {
     padding: 7px 15px;
-    background-color: #265097;
+    background-color: #326dd3;
     border: none;
     cursor: pointer;
+    font-size: 20px;
+    border-radius: 15px;
   }
   
   button:hover {
-    background-color: #346bca;
+    background-color: #083075;
   }
 
 body {
@@ -52,13 +55,19 @@ body {
     width: 300px;
     padding: 15px;
     border-style: none;
+    font-size: 20px;
+    border-radius:25px;
 }
 
 #navButtons {
     float: left;
+    margin-right: 250px;
+    margin-top: 10px;
 }
 
 #searchForm {
+    opacity: 0.8;
+    border-radius: 25px;
     float: right;
     background-color: #f0f0f0;
 }
