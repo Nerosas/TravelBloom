@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #f0f0f0;
 }
 
 nav {
@@ -12,6 +11,7 @@ nav {
     opacity: 0.8;
     justify-content: right;
     font-size: 25px;
+    color: #f0f0f0;
     
   }
   
@@ -33,6 +33,7 @@ nav {
   button {
     padding: 7px 15px;
     background-color: #326dd3;
+    color: #f0f0f0;
     border: none;
     cursor: pointer;
     font-size: 20px;
@@ -68,6 +69,7 @@ body {
 }
 
 .homePageContent {
+    color: #f0f0f0;
     font-family: 'Courier New', Courier, monospace;
     position: relative;
     top: -800px;
@@ -105,6 +107,7 @@ body {
     margin-left: 125px;
     margin-top: 15px;
     font-family: 'Courier New', Courier, monospace;
+    color: #f0f0f0;
 }
 
 #searchForm {
@@ -114,3 +117,10 @@ body {
     background-color: #f0f0f0;
     font-family: 'Courier New', Courier, monospace;
 }
+
+/*#contactUsForm {
+    color: black;
+    position: relative;
+    width: 40%;
+    opacity: 0.8
+}*/
