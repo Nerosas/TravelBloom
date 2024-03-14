@@ -160,26 +160,29 @@ body {
 #ourTeamList {
     list-style-type: none;
     position: relative;
-    left: 150px;
     top: -400px;
+    left: 100px;
 }
 
 #ourTeamList li {
-    display: inline;
+    display: block;
+    float: left;
+    position: relative;
     margin-right: 50px;
     background-color: #4b4a4a;
     opacity: 0.5;
     border-radius: 50px;
     padding: 25px;
-    width: 100px;
+    width: 400px;
     height: 400px;
 }
 
 .ourTeamListContent {
     color: #f0f0f0;
+    font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
     position: relative;
     display: inline-block;
-    margin-right: 50px;
-    left: -400px;
+    margin-right: 125px;
+    top: -200px;
 }
