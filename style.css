@@ -46,7 +46,7 @@ nav {
   }
 
 body {
-    background-image: url('gateshead-hero.jpg');
+    background-image: url('./images/gateshead-hero.jpg');
     background-size: cover;
 }
 
