@@ -187,3 +187,15 @@ body {
     top: -200px;
     left: 30px;
 }
+
+#searchResults {
+    background-color: white;
+    position: relative;
+    display: inline;
+    top: -1550px;
+    left: 250px;
+    padding: 15px;
+    margin-right: 100px;
+    border-radius: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
