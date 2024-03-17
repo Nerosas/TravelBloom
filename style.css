@@ -189,13 +189,17 @@ body {
 }
 
 #searchResults {
-    background-color: white;
-    position: relative;
-    display: inline;
     top: -1550px;
-    left: 250px;
-    padding: 15px;
-    margin-right: 100px;
-    border-radius: 50px;
+    left: 1000px;
+    position: relative;
+    width: 40%;
     font-family: 'Courier New', Courier, monospace;
+    list-style: none;
+}
+
+#searchResultsContent {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 50px;
 }
