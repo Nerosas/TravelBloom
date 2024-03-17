@@ -197,9 +197,24 @@ body {
     list-style: none;
 }
 
-#searchResultsContent {
+.searchResultsContent {
     background-color: white;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 50px;
+}
+
+.bookNowBtn {
+    width: 100%;
+    padding: 15px;
+}
+
+.searchResultsImages {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+.invisible {
+    opacity: 0;
 }
