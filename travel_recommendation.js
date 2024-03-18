@@ -11,35 +11,30 @@ function resetForm() {
 function searchDestination() {
     const input = searchInput.value.toLowerCase();
     searchResults.innerHTML = '';
+    let searchResultsConstructor = '';
 
     fetch('travel_recommendation_api.json')
         .then(response => response.json())
         .then(data => {
             if (input == "country" || input == "countries") {
                 resultsFinder = data.countries;
-                for (country in resultsFinder) {
-                    console.log('country.cities');
-                    console.log(country.cities);
-                    console.log('resultsFinder');
-                    console.log(resultsFinder);
-                    console.log();
-                    for (city in resultsFinder) {
-                        console.log('city');
-                        console.log(city.cities);
-                        searchResults.innerHTML += `<li class="searchResultsContent">`;
-                        searchResults.innerHTML += `<img src="${country.imageUrl}" class="searchResultsImages">`;
-                        searchResults.innerHTML += `<p><h1>${country.name}</h1></p>`;
-                        searchResults.innerHTML += `<p>${country.description}</p>`;
-                        searchResults.innerHTML += `<button class="bookNowBtn">Visit</button>`;
-                        searchResults.innerHTML += `</li>`;
+                for (let i = 0; i < resultsFinder.length; i++) {
+                    for (let j = 0; j < resultsFinder[i].cities.length; j++) {
+                        searchResultsConstructor += `<li class="searchResultsContent">`;
+                        searchResultsConstructor += `<img src="${resultsFinder[i].cities[j].imageUrl}" class="searchResultsImages">`;
+                        searchResultsConstructor += `<p><h1>${resultsFinder[i].cities[j].name}</h1></p>`;
+                        searchResultsConstructor += `<p>${resultsFinder[i].cities[j].description}</p>`;
+                        searchResultsConstructor += `<button class="bookNowBtn">Visit</button>`;
+                        searchResultsConstructor += `</li>`;
                     }
                 }
-                searchResults.classList.remove("invisible");
             } else if (input == "temple" || input == "temples") {
                 resultsFinder = data.temples;
             } else if (input == "beach" || input == "beaches") {
                 resultsFinder = data.beaches;
             }
+            searchResults.innerHTML = searchResultsConstructor;
+            searchResults.classList.remove("invisible");
 
  /*           for (result in resultsFinder) {
                 console.log(result);
