@@ -30,21 +30,33 @@ function searchDestination() {
                 }
             } else if (input == "temple" || input == "temples") {
                 resultsFinder = data.temples;
+                for (let i = 0; i < resultsFinder.length; i++) {
+                    searchResultsConstructor += `<li class="searchResultsContent">`;
+                    searchResultsConstructor += `<img src="${resultsFinder[i].imageUrl}" class="searchResultsImages">`;
+                    searchResultsConstructor += `<p><h1>${resultsFinder[i].name}</h1></p>`;
+                    searchResultsConstructor += `<p>${resultsFinder[i].description}</p>`;
+                    searchResultsConstructor += `<button class="bookNowBtn">Visit</button>`;
+                    searchResultsConstructor += `</li>`;
+                }
+                console.log(resultsFinder);
             } else if (input == "beach" || input == "beaches") {
                 resultsFinder = data.beaches;
+                for (let i = 0; i < resultsFinder.length; i++) {
+                    searchResultsConstructor += `<li class="searchResultsContent">`;
+                    searchResultsConstructor += `<img src="${resultsFinder[i].imageUrl}" class="searchResultsImages">`;
+                    searchResultsConstructor += `<p><h1>${resultsFinder[i].name}</h1></p>`;
+                    searchResultsConstructor += `<p>${resultsFinder[i].description}</p>`;
+                    searchResultsConstructor += `<button class="bookNowBtn">Visit</button>`;
+                    searchResultsConstructor += `</li>`;
+                }
+            } else {
+                searchResultsConstructor += `<li class="searchResultsContent">`;
+                searchResultsConstructor += `<p><h1>No results found.</h1></p>`;
+                searchResultsConstructor += `<p>Please try a different query.</p>`;
+                searchResultsConstructor += `</li>`;
             }
             searchResults.innerHTML = searchResultsConstructor;
             searchResults.classList.remove("invisible");
-
- /*           for (result in resultsFinder) {
-                console.log(result);
-                searchResults.innerHTML += `<li class="searchResultsContent">`;
-                searchResults.innerHTML +=temples `<img src="${result.imageUrl}" class="searchResultsImages">`;
-                searchResults.innerHTML += `<p><h1>${result.name}</h1></p>`;
-                searchResults.innerHTML += `<p>${result.description}</p>`;
-                searchResults.innerHTML += `<button class="bookNowBtn">Visit</button>`;
-                searchResults.innerHTML += `</li>`;
-            }*/
         });
 }
 
