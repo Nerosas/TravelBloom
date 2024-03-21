@@ -30,7 +30,7 @@ function searchDestination() {
         .then(response => response.json())
         .then(data => {
             if (input == "country" || input == "countries") {
-                for (let i = 0; i < resultsFinder.length; i++) {
+                for (let i = 0; i < data.countries.length; i++) {
                     searchResultsConstructor += constructResults(searchResultsConstructor, data.countries[i].cities);
                 }
             } else if (input == "temple" || input == "temples") {
