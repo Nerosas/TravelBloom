@@ -8,6 +8,19 @@ function resetForm() {
     searchResults.classList.add("invisible");
 }
 
+function constructResults(searchResultsConstructor, resultsFinder) {
+    for (let i = 0; i < resultsFinder.length; i++) {
+        searchResultsConstructor += `<li class="searchResultsContent">`;
+        searchResultsConstructor += `<img src="${resultsFinder[i].imageUrl}" class="searchResultsImages">`;
+        searchResultsConstructor += `<p><h1>${resultsFinder[i].name}</h1></p>`;
+        searchResultsConstructor += `<p>${resultsFinder[i].description}</p>`;
+        searchResultsConstructor += `<button class="bookNowBtn">Visit</button>`;
+        searchResultsConstructor += `</li>`;
+    }
+
+    return searchResultsConstructor;
+}
+
 function searchDestination() {
     const input = searchInput.value.toLowerCase();
     searchResults.innerHTML = '';
@@ -17,38 +30,13 @@ function searchDestination() {
         .then(response => response.json())
         .then(data => {
             if (input == "country" || input == "countries") {
-                resultsFinder = data.countries;
                 for (let i = 0; i < resultsFinder.length; i++) {
-                    for (let j = 0; j < resultsFinder[i].cities.length; j++) {
-                        searchResultsConstructor += `<li class="searchResultsContent">`;
-                        searchResultsConstructor += `<img src="${resultsFinder[i].cities[j].imageUrl}" class="searchResultsImages">`;
-                        searchResultsConstructor += `<p><h1>${resultsFinder[i].cities[j].name}</h1></p>`;
-                        searchResultsConstructor += `<p>${resultsFinder[i].cities[j].description}</p>`;
-                        searchResultsConstructor += `<button class="bookNowBtn">Visit</button>`;
-                        searchResultsConstructor += `</li>`;
-                    }
+                    searchResultsConstructor += constructResults(searchResultsConstructor, data.countries[i].cities);
                 }
             } else if (input == "temple" || input == "temples") {
-                resultsFinder = data.temples;
-                for (let i = 0; i < resultsFinder.length; i++) {
-                    searchResultsConstructor += `<li class="searchResultsContent">`;
-                    searchResultsConstructor += `<img src="${resultsFinder[i].imageUrl}" class="searchResultsImages">`;
-                    searchResultsConstructor += `<p><h1>${resultsFinder[i].name}</h1></p>`;
-                    searchResultsConstructor += `<p>${resultsFinder[i].description}</p>`;
-                    searchResultsConstructor += `<button class="bookNowBtn">Visit</button>`;
-                    searchResultsConstructor += `</li>`;
-                }
-                console.log(resultsFinder);
+                searchResultsConstructor += constructResults(searchResultsConstructor, data.temples);
             } else if (input == "beach" || input == "beaches") {
-                resultsFinder = data.beaches;
-                for (let i = 0; i < resultsFinder.length; i++) {
-                    searchResultsConstructor += `<li class="searchResultsContent">`;
-                    searchResultsConstructor += `<img src="${resultsFinder[i].imageUrl}" class="searchResultsImages">`;
-                    searchResultsConstructor += `<p><h1>${resultsFinder[i].name}</h1></p>`;
-                    searchResultsConstructor += `<p>${resultsFinder[i].description}</p>`;
-                    searchResultsConstructor += `<button class="bookNowBtn">Visit</button>`;
-                    searchResultsConstructor += `</li>`;
-                }
+                searchResultsConstructor += constructResults(searchResultsConstructor, data.beaches);
             } else {
                 searchResultsConstructor += `<li class="searchResultsContent">`;
                 searchResultsConstructor += `<p><h1>No results found.</h1></p>`;
